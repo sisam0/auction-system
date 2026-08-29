@@ -1,5 +1,7 @@
-package com.auction.user;
+package com.auction;
 
+import com.auction.auction.Auction;
+import com.auction.user.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

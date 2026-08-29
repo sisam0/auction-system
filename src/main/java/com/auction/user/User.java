@@ -1,13 +1,14 @@
 package com.auction.user;
 
+import com.auction.auction.Auction;
+import com.auction.Bid;
+import com.auction.Watchlist;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -19,8 +20,8 @@ import java.util.List;
 public class User {
 
     @Id
-    @GeneratedValue
-    private Integer user_id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer userId;
 
     private String username;
 
@@ -52,4 +53,10 @@ public class User {
             mappedBy = "user"
     )
     public List<Watchlist> w_list;
+
+    public User(String username, String email, String address) {
+        this.username = username;
+        this.email = email;
+        this.address = address;
+    }
 }

@@ -1,4 +1,4 @@
-package com.auction.user;
+package com.auction;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

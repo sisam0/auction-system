@@ -1,16 +1,17 @@
-package com.auction.user;
+package com.auction.auction;
 
+import com.auction.Bid;
+import com.auction.Watchlist;
+import com.auction.user.User;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Getter
 @Setter
 @Entity
@@ -18,7 +19,7 @@ public class Auction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer auction_id;
+    private Integer auctionId;
 
     private String title;
 
@@ -41,7 +42,7 @@ public class Auction {
     //many auction can be created by only one user i.e one user can create many auction
     @ManyToOne
     @JoinColumn(
-            name = "user_id"
+            name = "userId"
     )
     public User user;
 
