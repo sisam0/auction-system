@@ -2,7 +2,7 @@ package com.auction.user;
 
 import com.auction.auction.Auction;
 import com.auction.Bid;
-import com.auction.Watchlist;
+import com.auction.watchlist.Watchlist;
 import jakarta.persistence.*;
 import lombok.*;
 

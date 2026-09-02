@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 
 public record AuctionRequestDto(
         Integer userId,
+        String sellerName,
         String title,
         String description,
         Integer increase,

@@ -1,13 +1,11 @@
-package com.auction;
+package com.auction.watchlist;
 
 import com.auction.auction.Auction;
 import com.auction.user.User;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter

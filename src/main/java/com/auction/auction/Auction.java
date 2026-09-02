@@ -1,7 +1,7 @@
 package com.auction.auction;
 
 import com.auction.Bid;
-import com.auction.Watchlist;
+import com.auction.watchlist.Watchlist;
 import com.auction.user.User;
 import jakarta.persistence.*;
 import lombok.*;
@@ -38,6 +38,8 @@ public class Auction {
     private LocalDateTime startTime;
 
     private LocalDateTime endTime;
+
+    private String sellerName;
 
     //many auction can be created by only one user i.e one user can create many auction
     @ManyToOne
