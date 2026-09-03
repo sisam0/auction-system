@@ -1,5 +1,6 @@
 package com.auction.auction;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 public record AuctionResponseDto(
@@ -9,6 +10,6 @@ public record AuctionResponseDto(
         int increase,
         LocalDateTime startTime,
         LocalDateTime endTime,
-        int startingPrice
+        BigDecimal startingPrice
 ) {
 }

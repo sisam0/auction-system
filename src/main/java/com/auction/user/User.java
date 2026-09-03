@@ -1,8 +1,9 @@
 package com.auction.user;
 
 import com.auction.auction.Auction;
-import com.auction.Bid;
+import com.auction.bid.Bid;
 import com.auction.watchlist.Watchlist;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -46,12 +47,14 @@ public class User {
     @OneToMany(
             mappedBy = "user"
     )
+    @JsonManagedReference
     public List<Bid> bid;
 
     //one user has many watchlist
     @OneToMany(
             mappedBy = "user"
     )
+    @JsonManagedReference
     public List<Watchlist> w_list;
 
     public User(String username, String email, String address) {

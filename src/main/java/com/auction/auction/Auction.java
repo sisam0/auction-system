@@ -1,11 +1,14 @@
 package com.auction.auction;
 
-import com.auction.Bid;
+import com.auction.bid.Bid;
 import com.auction.watchlist.Watchlist;
 import com.auction.user.User;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -29,7 +32,7 @@ public class Auction {
 
     private String status;
 
-    private int startingPrice;
+    private BigDecimal startingPrice;
 
     @Column(
             nullable = false,
@@ -46,18 +49,21 @@ public class Auction {
     @JoinColumn(
             name = "userId"
     )
+    @JsonBackReference
     public User user;
 
     //many bids are made on one item.
     @OneToMany(
             mappedBy = "auction"
     )
+    @JsonManagedReference
     public List<Bid> bid;
 
     //one auction can be in many watchlist.
     @OneToMany(
             mappedBy = "auction"
     )
+    @JsonManagedReference
     public List<Watchlist> watchList;
 
     //before inserting into the db, we are initializing the value of startTime

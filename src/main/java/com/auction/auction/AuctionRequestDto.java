@@ -2,6 +2,7 @@ package com.auction.auction;
 
 import jakarta.persistence.criteria.CriteriaBuilder;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 public record AuctionRequestDto(
@@ -11,7 +12,7 @@ public record AuctionRequestDto(
         String description,
         Integer increase,
         String status,
-        Integer startingPrice,
+        BigDecimal startingPrice,
         LocalDateTime endTime
 ) {
 }

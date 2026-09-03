@@ -2,6 +2,7 @@ package com.auction.watchlist;
 
 import com.auction.auction.Auction;
 import com.auction.user.User;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -22,6 +23,7 @@ public class Watchlist {
     @JoinColumn(
             name = "user_id" //this will be the column in the db which has the FK reference to user table
     )
+    @JsonBackReference
     public User user;
 
     //one record in "watchList" can be tied to only one auction instance
@@ -29,6 +31,7 @@ public class Watchlist {
     @JoinColumn(
             name = "auction_id"
     )
+    @JsonBackReference
     public Auction auction;
 
 
