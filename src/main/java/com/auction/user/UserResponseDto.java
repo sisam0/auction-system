@@ -1,8 +1,9 @@
 package com.auction.user;
 
-public record UserDto(
+public record UserResponseDto(
         String username,
         String email,
-        String address
+        String address,
+        Integer phone
 ) {
 }

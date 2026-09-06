@@ -44,6 +44,8 @@ public class Auction {
 
     private String sellerName;
 
+    private BigDecimal currentPrice;
+
     //many auction can be created by only one user i.e one user can create many auction
     @ManyToOne
     @JoinColumn(

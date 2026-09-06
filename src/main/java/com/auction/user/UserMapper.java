@@ -16,19 +16,13 @@ public class UserMapper {
 
     }
 
-    public UserDto toUserDto(User user){
-        return new UserDto(
+    public UserResponseDto toUserResponseDto(User user){
+        return new UserResponseDto(
                 user.getUsername(),
                 user.getEmail(),
-                user.getAddress()
+                user.getAddress(),
+                user.getPhone()
         );
     }
 
-    public User toUser(UserDto dto){
-        return new User(
-                dto.username(),
-                dto.email(),
-                dto.address()
-        );
-    }
 }

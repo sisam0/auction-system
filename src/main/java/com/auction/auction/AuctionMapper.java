@@ -3,6 +3,8 @@ package com.auction.auction;
 import com.auction.user.User;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+
 @Service
 public class AuctionMapper {
 
@@ -23,7 +25,7 @@ public class AuctionMapper {
                 .build();
     }
 
-    public AuctionResponseDto toAuctionResponseDto(Auction auction){
+    public AuctionResponseDto toAuctionResponseDto(Auction auction, BigDecimal currentAmt){
         return new AuctionResponseDto(
                 auction.getSellerName(),
                 auction.getTitle(),
@@ -31,7 +33,7 @@ public class AuctionMapper {
                 auction.getIncrease(),
                 auction.getStartTime(),
                 auction.getEndTime(),
-                auction.getStartingPrice()
+                currentAmt
         );
     }
 

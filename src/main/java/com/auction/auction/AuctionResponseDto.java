@@ -7,9 +7,10 @@ public record AuctionResponseDto(
         String sellerName,
         String title,
         String description,
+
         int increase,
         LocalDateTime startTime,
         LocalDateTime endTime,
-        BigDecimal startingPrice
+        BigDecimal currentAmount
 ) {
 }

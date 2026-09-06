@@ -10,6 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.List;
+
 @AllArgsConstructor
 @Service
 public class BidMapper {
@@ -18,11 +20,19 @@ public class BidMapper {
     public final UserRepo userRepo;
 
     public Bid toBid(Auction auction, User user, BidRequestDto dto){
-
         return Bid.builder()
                 .auction(auction)
                 .user(user)
                 .amount(dto.amount())
                 .build();
+    }
+
+    public BidResponseDto toBidResponseDto(Bid bid, String uName, String sName){
+        return new BidResponseDto(
+                sName,
+                uName,
+                bid.getAmount(),
+                bid.getBidTime()
+        );
     }
 }
